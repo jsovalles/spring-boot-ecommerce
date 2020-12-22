@@ -33,7 +33,7 @@ public class CheckoutServiceImpl implements ICheckoutService {
 
         //populate order with orderItems
         Set<OrderItem> orderItems = purchase.getOrderItems();
-        orderItems.forEach(orderItem -> order.add(orderItem));
+        orderItems.forEach(order::add);
 
         //populate order with billing and shipping address
         order.setBillingAddress(purchase.getBillingAddress());
